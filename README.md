@@ -134,6 +134,9 @@ Simple Blink Example using Raspberry Pi, LED Light and Ethereum (web3 1.0.0)
 
 ### Installation
 Before doing anything make sure the breadboard and LED are correctly connected to the Raspberry Pi. Make note of the GPIO pin being used.
+Once you have cloned the repo make sure to install the `package.json` dependencies. From inside the IoT-Blink directory run:
+
+	`npm i`
 
 1. In one terminal window initialise ganache-cli:
 
