@@ -168,7 +168,7 @@ Once you have cloned the repo make sure to install the `package.json` dependenci
  
 1. Run blink.js, passing the contract address with the address from step 6 in the previous section in place of ADDRESS:
 
-       `node blink.js ADDRESS`
+       node blink.js ADDRESS
 
 2. In another terminal window run `transaction.js`, replacing the contract address as in the previous step:
 
