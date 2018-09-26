@@ -130,7 +130,7 @@ Simple Blink Example using Raspberry Pi, LED Light and Ethereum (web3 1.0.0)
 * `onoff v1.1.2`
 * `truffle v4.1.13`
 
-##Installation & Starting
+## Installation & Starting
 
 ### Installation
 Before doing anything make sure the breadboard and LED are correctly connected to the Raspberry Pi. Make note of the GPIO pin being used.
