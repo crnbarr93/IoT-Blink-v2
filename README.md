@@ -136,23 +136,39 @@ Simple Blink Example using Raspberry Pi, LED Light and Ethereum (web3 1.0.0)
 Before doing anything make sure the breadboard and LED are correctly connected to the Raspberry Pi. Make note of the GPIO pin being used.
 
 1. In one terminal window initialise ganache-cli:
+
 	`ganache-cli`
+
 2. In another terminal window change directory to IoT-Blink
 3. Navigate to the truffle directory
+
 	`cd truffle`
+
 4. Compile the solidity contracts
+
 	`truffle compile`
+
 5. Migrate the solidity contracts
+
 	`truffle migrate`
+
 6. Copy the contract address, the line printed in the terminal should read:
+
 	`Blink: ...<contract adddress>`
+
 7. Open `blink.js` in any text editor and replace the following line with the LEDs GPIO pin number:
+
 	`var led = new Gpio(<PIN NUMBER>, 'out')`
+
 
 ### Running
  
 1. Run blink.js, passing the contract address with the address from step 6 in the previous section in place of <ADDRESS>:
+
        `node blink.js <ADDRESS>`
+
 2. In another terminal window run `transaction.js`, replacing the contract address as in the previous step:
+
 	`node transaction.js <ADDRESS>`
+
 3. The LED should begin to blink!
