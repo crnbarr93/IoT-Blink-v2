@@ -163,12 +163,12 @@ Before doing anything make sure the breadboard and LED are correctly connected t
 
 ### Running
  
-1. Run blink.js, passing the contract address with the address from step 6 in the previous section in place of <ADDRESS>:
+1. Run blink.js, passing the contract address with the address from step 6 in the previous section in place of ADDRESS:
 
-       `node blink.js <ADDRESS>`
+       `node blink.js ADDRESS`
 
 2. In another terminal window run `transaction.js`, replacing the contract address as in the previous step:
 
-	`node transaction.js <ADDRESS>`
+	`node transaction.js ADDRESS`
 
 3. The LED should begin to blink!
