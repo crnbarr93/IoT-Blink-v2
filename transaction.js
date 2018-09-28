@@ -19,9 +19,12 @@ var getCoinbase = async () => {
 
 getCoinbase().then(() => {
   console.log('SENDING TRANSACTION...');
-	blinker.methods.set(1).send({
-		from: coinbase,
-	}).then((receipt) => {
+    var blinkCount = process.argv[3];
+    if (!blinkCount) blinkCount = 3;
+    if (blinkCount < 1) blinkCount = 1;
+    blinker.methods.set(blinkCount).send({
+    	from: coinbase,
+    }).then((receipt) => {
     if (!receipt) console.error('Somethign went wrong, no receipt received')
     if (receipt) console.log('TRANSACTION SENT');
     process.exit();

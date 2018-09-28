@@ -57,8 +57,9 @@ getCoinbase().then(() => {
 	*/
 
 	// indefinite recursive loop to read the 'ItBlinks' event in the blink contract.
-	var event = blinker.once('ItBlinks', function(error, result) {
+	var event = blinker.events.ItBlinks({}, function(error, result) {
 	  if (!error) {
+	    var blinkCount = result.returnValues.data;
 	    // when ItBlinks event is fired, output the value 'data' from the result object and the block number
 	    var msg = "\n\n*********\n";
 	    msg += "Blink!\n";
@@ -68,14 +69,14 @@ getCoinbase().then(() => {
 	    
 	    //now loop the light blink on for a half second, then off for half second
 	    iv = setInterval(function(){
-	    	led.writeSync(led.readSync() === 0 ? 1 : 0)
+		led.writeSync(led.readSync() === 0 ? 1 : 0)
 	    }, 500);
 	
 	    // Stop blinking the light after 10 seconds.
 	    setTimeout(function() {
 	    	clearInterval(iv); // Stop blinking
 		led.writeSync(0); //Turn LED off
-	    }, 10000);
+	    }, blinkCount+1*500);
 	
 	  }
 	});
